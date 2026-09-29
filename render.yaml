@@ -1,0 +1,36 @@
+# Render Blueprint — one free Node web service running the Next.js app.
+# The app keeps sessions in memory and writes data/store.json, so it needs a single
+# long-running process (not serverless functions). The NestJS code in server/ is not
+# used by the web app and is not deployed.
+services:
+  - type: web
+    name: contact-acquisition-portal
+    runtime: node
+    plan: free
+    branch: main
+    buildCommand: npm ci && npm run build
+    startCommand: npm start -- -p $PORT
+    healthCheckPath: /login
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 22.22.2
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"
+      # Optional — set real values in the Render dashboard, never in this file.
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        sync: false
+      - key: SMTP_SECURE
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: SMTP_FROM
+        sync: false
+      - key: OPENCORPORATES_API_TOKEN
+        sync: false

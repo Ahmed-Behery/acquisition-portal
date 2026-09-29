@@ -18,6 +18,15 @@ npm start          # production
 
 `data/store.json` is created on first run from `src/server/seed.js`. Delete it to reseed.
 
+### Deploy (Render, free tier)
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Ahmed-Behery/acquisition-portal)
+
+`render.yaml` defines a single Node web service (`npm ci && npm run build`, then
+`npm start`). It must stay a long-running server, not serverless functions, because
+sessions are in memory and data is written to `data/store.json`. On the free plan that
+disk is ephemeral, so the data resets to the seed on every redeploy or restart.
+
 ### Demo accounts (password `Contact@123`)
 
 | Role             | Username     |
