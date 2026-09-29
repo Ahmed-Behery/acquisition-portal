@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Group · Platform Flow Charts & User Guide</title>
+<style>
+  :root{
+    --ink:#1a2332; --soft:#4a5568; --muted:#718096; --line:#e2e8f0; --line2:#cbd5e0;
+    --primary:#1e40af; --primary-soft:#dbeafe; --green:#15803d; --green-soft:#dcfce7;
+    --orange:#c2410c; --orange-soft:#ffedd5; --red:#b91c1c; --red-soft:#fee2e2;
+    --purple:#6b21a8; --purple-soft:#f3e8ff; --yellow:#a16207; --yellow-soft:#fef3c7; --bg:#f4f6f9;
+  }
+  *{box-sizing:border-box}
+  body{font-family:'Segoe UI',Inter,-apple-system,Arial,sans-serif;color:var(--ink);line-height:1.55;margin:0;background:var(--bg);font-size:14px}
+  .page{max-width:920px;margin:0 auto;background:#fff;padding:54px 60px}
+  h1{font-size:30px;margin:0 0 4px;letter-spacing:-.01em}
+  h2{font-size:21px;margin:38px 0 12px;padding-bottom:7px;border-bottom:2px solid var(--primary);color:var(--primary)}
+  h3{font-size:16px;margin:24px 0 8px;color:var(--ink)}
+  h4{font-size:14px;margin:16px 0 6px;color:var(--soft);text-transform:uppercase;letter-spacing:.05em}
+  p,li{color:var(--soft)}
+  code{background:#eef2f7;padding:1px 6px;border-radius:4px;font-size:12.5px;color:var(--ink)}
+  table{border-collapse:collapse;width:100%;margin:12px 0;font-size:13px}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:var(--primary-soft);color:var(--primary)}
+  .tag{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:700}
+  .t-emp{background:var(--primary-soft);color:var(--primary)} .t-hop{background:var(--purple-soft);color:var(--purple)}
+  .t-lead{background:var(--green-soft);color:var(--green)} .t-adm{background:var(--orange-soft);color:var(--orange)} .t-all{background:#e2e8f0;color:#334155}
+  .lead{font-size:15px;color:var(--soft);margin-top:6px}
+  .cover{padding:60px 0 30px;border-bottom:3px solid var(--primary);margin-bottom:8px}
+  .cover .sub{font-size:16px;color:var(--muted);margin-top:8px}
+  .meta{font-size:12.5px;color:var(--muted);margin-top:18px}
+  .callout{background:var(--primary-soft);border-left:4px solid var(--primary);padding:12px 16px;border-radius:6px;margin:14px 0;color:#1e3a8a;font-size:13px}
+  .callout.warn{background:var(--yellow-soft);border-color:var(--yellow);color:#854d0e}
+  .callout.ok{background:var(--green-soft);border-color:var(--green);color:#14532d}
+  .toc{columns:2;gap:30px;font-size:13px;margin:14px 0}
+  .toc a{color:var(--primary);text-decoration:none}
+  .fc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px;margin:14px 0;overflow-x:auto}
+  .fc-title{font-weight:700;font-size:13.5px;color:var(--ink);margin-bottom:6px}
+  .legend{font-size:11.5px;color:var(--muted);margin:6px 0 0}
+  .legend span{display:inline-block;margin-right:14px}
+  .sw{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:middle;margin-right:4px}
+  svg text{font-family:'Segoe UI',Arial,sans-serif}
+  .step-list{padding-left:18px} .step-list li{margin:5px 0}
+  ol.j{counter-reset:s;list-style:none;padding-left:0}
+  ol.j>li{position:relative;padding:6px 0 6px 34px;margin:0;border-bottom:1px dashed var(--line)}
+  ol.j>li:before{counter-increment:s;content:counter(s);position:absolute;left:0;top:6px;width:23px;height:23px;background:var(--primary);color:#fff;border-radius:50%;text-align:center;line-height:23px;font-size:12px;font-weight:700}
+  hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+  @media print{
+    body{background:#fff} .page{max-width:none;padding:0 8mm;margin:0}
+    h2{page-break-after:avoid} .fc,table,ol.j>li{page-break-inside:avoid}
+    a{color:var(--primary);text-decoration:none}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="cover">
+    <h1>Contact Group · Client &amp; Pipeline Platform</h1>
+    <div class="sub">Flow Charts &amp; User Guide — all features and journeys</div>
+    <div class="meta">
+      Version 2.0 · June 2026 · Prepared for Contact Group<br>
+      Roles covered: Employee / RM · Head of Products · CEO / MD · Administrator
+    </div>
+  </div>
+
+  <div class="callout">
+    <b>How to use this document.</b> Open it in any browser. To save as PDF use <b>Print → Save as PDF</b>. It also opens in Microsoft Word (<i>Open&nbsp;with → Word</i>) if you need an editable copy. The flow charts are vector graphics and stay sharp at any zoom.
+  </div>
+
+  <h2 id="toc">Contents</h2>
+  <div class="toc">
+    1. <a href="#overview">Platform overview</a><br>
+    2. <a href="#roles">Roles &amp; access</a><br>
+    3. <a href="#login">Getting started — login &amp; registration</a><br>
+    4. <a href="#flowcharts">Flow charts (all journeys)</a><br>
+    &nbsp;&nbsp;4.1 <a href="#fc-access">Access &amp; roles</a><br>
+    &nbsp;&nbsp;4.2 <a href="#fc-entry">New prospect entry</a><br>
+    &nbsp;&nbsp;4.3 <a href="#fc-validation">Head of Products validation</a><br>
+    &nbsp;&nbsp;4.4 <a href="#fc-lifecycle">Deal lifecycle</a><br>
+    &nbsp;&nbsp;4.5 <a href="#fc-admin">Admin, lists &amp; alerts</a><br>
+    5. <a href="#features">Feature guide (screen by screen)</a><br>
+    6. <a href="#journeys">Step-by-step journeys by role</a><br>
+    7. <a href="#admin">Administration &amp; configuration</a><br>
+    8. <a href="#reference">Reference data &amp; credentials</a><br>
+  </div>
+
+  <!-- ============================================================= -->
+  <h2 id="overview">1. Platform overview</h2>
+  <p>The Contact Group platform is a shared, multi-user system for managing prospects and the sales pipeline across all group companies (Factoring, Leasing, Mortgage, Credit, Insurance, Contact&nbsp;Auto). Every user signs in with their own account; data is shared in real time, so when one person adds a prospect the relevant people are notified and can act on it.</p>
+  <p>The platform centres on three things:</p>
+  <ul class="step-list">
+    <li><b>Prospects &amp; pipeline</b> — capture a prospect, route it through Head&nbsp;of&nbsp;Products validation, then move it through the negotiation stages to a closed deal (which becomes a merchant in the Master Ledger).</li>
+    <li><b>Governance</b> — the Head of Products validates every new entry; extensions, done deals, edits and deletions all require approval; the Administrator is notified of every submitted request.</li>
+    <li><b>Controlled reference data</b> — prospect names come from the Egyptian companies directory, and the industry / product lists are centrally managed so every dropdown stays consistent.</li>
+  </ul>
+
+  <!-- ============================================================= -->
+  <h2 id="roles">2. Roles &amp; access</h2>
+  <table>
+    <tr><th style="width:150px">Role</th><th>What they can do</th></tr>
+    <tr><td><span class="tag t-emp">Employee / RM</span></td><td>Sign in, insert pipeline entries, manage their own entries, move their deals through the negotiation stages, request extensions / done deals / edits / deletions, view the Master Ledger, Good&nbsp;to&nbsp;Go list, Companies and Product Catalogue. <b>All employees in the directory can insert entries.</b></td></tr>
+    <tr><td><span class="tag t-hop">Head of Products</span></td><td>Everything above, plus <b>validate new entries</b> (approve or return), approve/reject extensions, done deals, edits, deletions and late entries, and <b>edit the managed lists</b> (industries, products, Egypt source).</td></tr>
+    <tr><td><span class="tag t-lead">CEO / MD</span></td><td>Group-wide dashboards and visibility across all companies; flag interest in a prospect to join a client visit.</td></tr>
+    <tr><td><span class="tag t-adm">Administrator</span></td><td>Full visibility, plus <b>edit every managed list</b>, add recipient/login accounts, and receive an <b>alert + email on every submitted request</b>. (Account: <code>doaa.orfy</code>.)</td></tr>
+  </table>
+
+  <!-- ============================================================= -->
+  <h2 id="login">3. Getting started — login &amp; registration</h2>
+  <p>Open the platform URL. You can either sign in with an existing account or register a new one.</p>
+  <h4>Sign in</h4>
+  <ol class="j">
+    <li>On the <b>Sign In</b> tab, enter your <b>username</b> (the part of your work email before <code>@</code> — e.g. <code>john.saad</code>) and password.</li>
+    <li>Click <b>Sign In</b>. You land on your role-specific dashboard.</li>
+  </ol>
+  <h4>Register a new account</h4>
+  <ol class="j">
+    <li>Click the <b>Register</b> tab.</li>
+    <li>Enter full name, a username (min 3 characters), email, department, job title.</li>
+    <li>Set a password — minimum <b>8 characters, one uppercase letter, one number</b> — and confirm it.</li>
+    <li>Click <b>Create Account</b>; you are signed in immediately.</li>
+  </ol>
+  <div class="callout">Demo accounts (all use password <code>Contact@123</code>): <code>doaa.orfy</code> (Admin), <code>d.elsayed</code> (Head of Products), <code>h.mansour</code> (CEO), <code>y.fahmy</code> (RM), <code>john.saad</code> &amp; <code>adel.kamel</code> (Employees).</div>
+
+  <!-- ============================================================= -->
+  <h2 id="flowcharts">4. Flow charts</h2>
+  <p class="legend">
+    <span><span class="sw" style="background:#dbeafe"></span>Action / screen</span>
+    <span><span class="sw" style="background:#fef3c7;border-radius:50%"></span>Decision</span>
+    <span><span class="sw" style="background:#dcfce7"></span>Success / end</span>
+    <span><span class="sw" style="background:#fee2e2"></span>Return / stop</span>
+  </p>
+
+  <!-- 4.1 ACCESS -->
+  <h3 id="fc-access">4.1 Access &amp; roles</h3>
+  <div class="fc">
+    <div class="fc-title">From opening the URL to the right dashboard</div>
+    <svg viewBox="0 0 760 360" width="100%" role="img" aria-label="Access and roles flow chart">
+      <defs><marker id="a1" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#64748b"/></marker></defs>
+      <style>
+        .box{fill:#dbeafe;stroke:#1e40af;stroke-width:1.3} .boxg{fill:#dcfce7;stroke:#15803d;stroke-width:1.3}
+        .dia{fill:#fef3c7;stroke:#a16207;stroke-width:1.3}
+        .lbl{font-size:12px;fill:#1a2332;text-anchor:middle} .lblb{font-size:12px;fill:#1a2332;text-anchor:middle;font-weight:700}
+        .ed{stroke:#64748b;stroke-width:1.3;fill:none;marker-end:url(#a1)} .et{font-size:10.5px;fill:#64748b}
+      </style>
+      <rect class="box" x="300" y="14" width="160" height="40" rx="8"/><text class="lblb" x="380" y="38">Open platform URL</text>
+      <path class="ed" d="M380,54 L380,80"/>
+      <polygon class="dia" points="380,82 470,116 380,150 290,116"/><text class="lbl" x="380" y="113">Have an</text><text class="lbl" x="380" y="127">account?</text>
+      <path class="ed" d="M290,116 L150,116 L150,150"/><text class="et" x="200" y="110">No</text>
+      <path class="ed" d="M470,116 L610,116 L610,150"/><text class="et" x="560" y="110">Yes</text>
+      <rect class="box" x="60" y="152" width="180" height="48" rx="8"/><text class="lbl" x="150" y="172">Register: name, username,</text><text class="lbl" x="150" y="188">email, dept, password</text>
+      <rect class="box" x="520" y="152" width="180" height="48" rx="8"/><text class="lbl" x="610" y="172">Sign in with</text><text class="lbl" x="610" y="188">username + password</text>
+      <path class="ed" d="M150,200 L150,232"/><path class="ed" d="M610,200 L610,232"/>
+      <rect class="box" x="60" y="234" width="180" height="40" rx="8"/><text class="lbl" x="150" y="258">Account created</text>
+      <rect class="box" x="520" y="234" width="180" height="40" rx="8"/><text class="lbl" x="610" y="258">Credentials checked</text>
+      <path class="ed" d="M150,274 L150,300 L360,300"/><path class="ed" d="M610,274 L610,300 L400,300"/>
+      <rect class="boxg" x="280" y="302" width="200" height="44" rx="8"/><text class="lblb" x="380" y="322">Role-based dashboard</text><text class="lbl" x="380" y="338">Employee · HoP · Leader · Admin</text>
+    </svg>
+  </div>
+
+  <!-- 4.2 NEW ENTRY -->
+  <h3 id="fc-entry">4.2 New prospect entry</h3>
+  <div class="fc">
+    <div class="fc-title">Employee/RM creates a prospect → everyone is notified → it goes to the Head of Products</div>
+    <svg viewBox="0 0 760 470" width="100%" role="img" aria-label="New prospect entry flow chart">
+      <defs><marker id="a2" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#64748b"/></marker></defs>
+      <style>
+        .b2{fill:#dbeafe;stroke:#1e40af;stroke-width:1.3} .g2{fill:#dcfce7;stroke:#15803d;stroke-width:1.3} .p2{fill:#f3e8ff;stroke:#6b21a8;stroke-width:1.3}
+        .d2{fill:#fef3c7;stroke:#a16207;stroke-width:1.3}
+        .l2{font-size:12px;fill:#1a2332;text-anchor:middle} .lb2{font-size:12px;fill:#1a2332;text-anchor:middle;font-weight:700}
+        .e2{stroke:#64748b;stroke-width:1.3;fill:none;marker-end:url(#a2)} .t2{font-size:10.5px;fill:#64748b}
+      </style>
+      <rect class="b2" x="290" y="12" width="180" height="40" rx="8"/><text class="lb2" x="380" y="36">Open “New Entry”</text>
+      <path class="e2" d="M380,52 L380,76"/>
+      <polygon class="d2" points="380,78 480,112 380,146 280,112"/><text class="l2" x="380" y="108">Prospect in the</text><text class="l2" x="380" y="122">Egypt directory?</text>
+      <path class="e2" d="M480,112 L600,112 L600,150"/><text class="t2" x="525" y="106">Yes</text>
+      <path class="e2" d="M280,112 L150,112 L150,150"/><text class="t2" x="200" y="106">No</text>
+      <rect class="b2" x="515" y="152" width="175" height="46" rx="8"/><text class="l2" x="602" y="172">Pick company from</text><text class="l2" x="602" y="188">search dropdown</text>
+      <rect class="d2" x="62" y="152" width="176" height="46" rx="8" style="fill:#ffedd5;stroke:#c2410c"/><text class="l2" x="150" y="172">Choose “Not included”</text><text class="l2" x="150" y="188">+ type the name</text>
+      <path class="e2" d="M602,198 L602,222 L400,222"/><path class="e2" d="M150,198 L150,222 L360,222"/>
+      <rect class="b2" x="250" y="224" width="260" height="48" rx="8"/><text class="l2" x="380" y="244">Fill: industry, products, value, dates,</text><text class="l2" x="380" y="260">CR no., contact person/mobile/email</text>
+      <path class="e2" d="M380,272 L380,296"/>
+      <rect class="b2" x="300" y="298" width="160" height="38" rx="8"/><text class="lb2" x="380" y="321">Click Save</text>
+      <path class="e2" d="M380,336 L380,358"/>
+      <rect class="p2" x="120" y="360" width="240" height="48" rx="8"/><text class="l2" x="240" y="380">Notify all 74 recipients</text><text class="l2" x="240" y="396">+ email alert to Admin</text>
+      <rect class="d2" x="400" y="360" width="240" height="48" rx="8" style="fill:#f3e8ff;stroke:#6b21a8"/><text class="l2" x="520" y="380">Status → Pending HoP</text><text class="l2" x="520" y="396">Validation</text>
+      <path class="e2" d="M240,408 L240,432 L360,432"/><path class="e2" d="M520,408 L520,432 L400,432"/>
+      <rect class="g2" x="270" y="430" width="220" height="36" rx="8"/><text class="lb2" x="380" y="453">RM lands on Product Catalogue</text>
+    </svg>
+  </div>
+
+  <!-- 4.3 VALIDATION -->
+  <h3 id="fc-validation">4.3 Head of Products validation</h3>
+  <div class="fc">
+    <div class="fc-title">How the Head of Products validates each entry</div>
+    <svg viewBox="0 0 760 430" width="100%" role="img" aria-label="HoP validation decision flow chart">
+      <defs><marker id="a3" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#64748b"/></marker></defs>
+      <style>
+        .b3{fill:#dbeafe;stroke:#1e40af;stroke-width:1.3} .g3{fill:#dcfce7;stroke:#15803d;stroke-width:1.3} .r3{fill:#fee2e2;stroke:#b91c1c;stroke-width:1.3}
+        .d3{fill:#fef3c7;stroke:#a16207;stroke-width:1.3}
+        .l3{font-size:12px;fill:#1a2332;text-anchor:middle} .lb3{font-size:12px;fill:#1a2332;text-anchor:middle;font-weight:700}
+        .e3{stroke:#64748b;stroke-width:1.3;fill:none;marker-end:url(#a3)} .t3{font-size:10.5px;fill:#64748b}
+      </style>
+      <rect class="b3" x="290" y="12" width="180" height="40" rx="8"/><text class="lb3" x="380" y="36">HoP opens the entry</text>
+      <path class="e3" d="M380,52 L380,72"/>
+      <polygon class="d3" points="380,74 490,116 380,158 270,116"/><text class="l3" x="380" y="106">Validate the</text><text class="l3" x="380" y="120">whole case</text><text class="l3" x="380" y="134">— outcome?</text>
+      <!-- three branches -->
+      <path class="e3" d="M380,158 L380,196"/><text class="t3" x="392" y="180">Valid</text>
+      <path class="e3" d="M270,116 L120,116 L120,196"/><text class="t3" x="150" y="110">In directory but typed</text>
+      <path class="e3" d="M490,116 L640,116 L640,196"/><text class="t3" x="560" y="110">Other issue</text>
+      <rect class="g3" x="300" y="198" width="160" height="44" rx="8"/><text class="l3" x="380" y="218">Approve</text><text class="l3" x="380" y="234">→ First Meeting</text>
+      <rect class="r3" x="40" y="198" width="190" height="44" rx="8"/><text class="l3" x="135" y="218">Return: “please choose</text><text class="l3" x="135" y="234">prospect name”</text>
+      <rect class="r3" x="540" y="198" width="190" height="44" rx="8"/><text class="l3" x="635" y="218">Return with a required</text><text class="l3" x="635" y="234">comment</text>
+      <path class="e3" d="M135,242 L135,276"/><path class="e3" d="M635,242 L635,276"/>
+      <rect class="d3" x="40" y="278" width="190" height="40" rx="8" style="fill:#f1f5f9;stroke:#94a3b8"/><text class="lb3" x="135" y="302">Status → Returned to RM</text>
+      <rect class="d3" x="540" y="278" width="190" height="40" rx="8" style="fill:#f1f5f9;stroke:#94a3b8"/><text class="lb3" x="635" y="302">Status → Returned to RM</text>
+      <path class="e3" d="M135,318 L135,348 L360,348"/><path class="e3" d="M635,318 L635,348 L400,348"/>
+      <rect class="b3" x="270" y="346" width="220" height="44" rx="8"/><text class="l3" x="380" y="366">RM fixes &amp; clicks</text><text class="l3" x="380" y="382">“Resubmit for validation”</text>
+      <path class="e3" d="M380,390 L380,404 L725,404 L725,116 L490,116"/><text class="t3" x="470" y="400">back to HoP</text>
+      <path class="e3" d="M380,242 L380,256"/>
+      <rect class="g3" x="300" y="256" width="160" height="0" rx="8"/>
+    </svg>
+    <p class="legend">After “Approve” the entry becomes <b>First Meeting</b> and continues through the deal lifecycle (4.4). The full comment history (returns, approvals, notes) is kept on each entry.</p>
+  </div>
+
+  <!-- 4.4 LIFECYCLE -->
+  <h3 id="fc-lifecycle">4.4 Deal lifecycle</h3>
+  <div class="fc">
+    <div class="fc-title">From validated entry to merchant (or Good to Go / Lost)</div>
+    <svg viewBox="0 0 760 420" width="100%" role="img" aria-label="Deal lifecycle flow chart">
+      <defs><marker id="a4" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#64748b"/></marker></defs>
+      <style>
+        .b4{fill:#dbeafe;stroke:#1e40af;stroke-width:1.3} .g4{fill:#dcfce7;stroke:#15803d;stroke-width:1.3} .r4{fill:#fee2e2;stroke:#b91c1c;stroke-width:1.3}
+        .p4{fill:#f3e8ff;stroke:#6b21a8;stroke-width:1.3} .d4{fill:#fef3c7;stroke:#a16207;stroke-width:1.3}
+        .l4{font-size:11.5px;fill:#1a2332;text-anchor:middle} .lb4{font-size:11.5px;fill:#1a2332;text-anchor:middle;font-weight:700}
+        .e4{stroke:#64748b;stroke-width:1.3;fill:none;marker-end:url(#a4)} .t4{font-size:10px;fill:#64748b}
+      </style>
+      <rect class="b4" x="40" y="20" width="120" height="36" rx="8"/><text class="lb4" x="100" y="42">First Meeting</text>
+      <path class="e4" d="M160,38 L196,38"/>
+      <rect class="b4" x="198" y="20" width="120" height="36" rx="8"/><text class="lb4" x="258" y="42">Negotiation</text>
+      <path class="e4" d="M318,38 L354,38"/>
+      <rect class="b4" x="356" y="20" width="130" height="36" rx="8"/><text class="lb4" x="421" y="42">Negotiation C1 / C2</text>
+      <path class="e4" d="M486,38 L540,38 L540,66"/>
+      <polygon class="d4" points="540,68 640,104 540,140 440,104"/><text class="l4" x="540" y="100">Outcome of</text><text class="l4" x="540" y="114">negotiation?</text>
+      <!-- branches: done deal (down), extend (left loop), good to go (right), lost (down-right) -->
+      <path class="e4" d="M540,140 L540,170"/><text class="t4" x="552" y="158">Done deal</text>
+      <path class="e4" d="M440,104 L300,104 L300,150"/><text class="t4" x="330" y="98">Need more time</text>
+      <path class="e4" d="M640,104 L700,104 L700,150"/><text class="t4" x="660" y="98">No activity</text>
+      <rect class="p4" x="210" y="152" width="180" height="46" rx="8"/><text class="l4" x="300" y="172">Request Extension</text><text class="l4" x="300" y="188">→ HoP approves</text>
+      <path class="e4" d="M300,152 L300,104"/>
+      <rect class="d4" x="620" y="152" width="130" height="46" rx="8" style="fill:#ffedd5;stroke:#c2410c"/><text class="l4" x="685" y="172">Good to Go list</text><text class="l4" x="685" y="188">(re-engage later)</text>
+      <rect class="p4" x="450" y="172" width="180" height="46" rx="8"/><text class="l4" x="540" y="192">Submit Done Deal +</text><text class="l4" x="540" y="208">contract → HoP</text>
+      <path class="e4" d="M540,218 L540,250"/>
+      <polygon class="d4" points="540,252 626,286 540,320 454,286"/><text class="l4" x="540" y="282">HoP approves?</text>
+      <path class="e4" d="M540,320 L540,352"/><text class="t4" x="552" y="340">Yes</text>
+      <path class="e4" d="M454,286 L360,286 L360,330"/><text class="t4" x="372" y="280">No</text>
+      <rect class="r4" x="270" y="332" width="180" height="40" rx="8"/><text class="l4" x="360" y="356">Back to Negotiation</text>
+      <rect class="g4" x="430" y="354" width="220" height="46" rx="8"/><text class="lb4" x="540" y="374">New merchant created</text><text class="l4" x="540" y="390">in Master Ledger (with code)</text>
+    </svg>
+    <p class="legend">Extensions, Done Deals, Edits and Deletions are all <b>requests that the Head of Products approves or rejects</b>. Stale entries automatically move to the <b>Good&nbsp;to&nbsp;Go</b> list, where any RM across the group may re-engage.</p>
+  </div>
+
+  <!-- 4.5 ADMIN -->
+  <h3 id="fc-admin">4.5 Admin, lists &amp; alerts</h3>
+  <div class="fc">
+    <div class="fc-title">Managed dropdowns, recipients, and the admin alert on every request</div>
+    <svg viewBox="0 0 760 300" width="100%" role="img" aria-label="Admin and lists flow chart">
+      <defs><marker id="a5" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#64748b"/></marker></defs>
+      <style>
+        .b5{fill:#dbeafe;stroke:#1e40af;stroke-width:1.3} .o5{fill:#ffedd5;stroke:#c2410c;stroke-width:1.3} .g5{fill:#dcfce7;stroke:#15803d;stroke-width:1.3}
+        .l5{font-size:11.5px;fill:#1a2332;text-anchor:middle} .lb5{font-size:11.5px;fill:#1a2332;text-anchor:middle;font-weight:700}
+        .e5{stroke:#64748b;stroke-width:1.3;fill:none;marker-end:url(#a5)}
+      </style>
+      <!-- top row: any submission -> admin alert -->
+      <rect class="b5" x="40" y="24" width="190" height="44" rx="8"/><text class="l5" x="135" y="44">Any user submits a</text><text class="l5" x="135" y="60">request (entry/extend/…)</text>
+      <path class="e5" d="M230,46 L300,46"/>
+      <rect class="o5" x="302" y="24" width="200" height="44" rx="8"/><text class="l5" x="402" y="44">Admin gets in-app alert +</text><text class="l5" x="402" y="60">email log (+ real email*)</text>
+      <path class="e5" d="M502,46 L572,46"/>
+      <rect class="g5" x="574" y="24" width="160" height="44" rx="8"/><text class="l5" x="654" y="50">Logged in “Admin email log”</text>
+      <!-- bottom: admin/hop edit lists -> dropdowns update -->
+      <rect class="b5" x="40" y="150" width="200" height="44" rx="8"/><text class="l5" x="140" y="170">Admin / HoP open</text><text class="l5" x="140" y="186">“Admin &amp; Lists”</text>
+      <path class="e5" d="M240,172 L300,172"/>
+      <rect class="o5" x="302" y="150" width="220" height="44" rx="8"/><text class="l5" x="412" y="170">Add / delete industries, products,</text><text class="l5" x="412" y="186">Egypt source, recipients</text>
+      <path class="e5" d="M522,172 L582,172"/>
+      <rect class="g5" x="584" y="150" width="150" height="44" rx="8"/><text class="l5" x="659" y="170">Every dropdown</text><text class="l5" x="659" y="186">updates instantly</text>
+      <text x="40" y="232" style="font-size:11px;fill:#718096">* Real email is delivered to the Admin mailbox when SMTP credentials are configured on the server; otherwise the alert is in-app + logged.</text>
+    </svg>
+  </div>
+
+  <!-- ============================================================= -->
+  <h2 id="features">5. Feature guide (screen by screen)</h2>
+
+  <h3>Dashboard</h3>
+  <p>Role-aware home screen. Employees/RMs see their own book and pipeline; the Head of Products sees items awaiting validation/approval; CEO/MD/Admin see group-wide figures. A <b>+ New pipeline entry</b> button is always available.</p>
+
+  <h3>Notifications (bell / inbox)</h3>
+  <p>Email-style alerts addressed to you. New-prospect alerts go to the whole leadership list; validation requests go to the Head of Products; approvals/returns go back to the entrant; the Administrator receives an alert for every submitted request. The bell shows an unread count.</p>
+
+  <h3>New Entry</h3>
+  <p>The prospect capture form. Key fields:</p>
+  <table>
+    <tr><th style="width:190px">Field</th><th>Notes</th></tr>
+    <tr><td>Prospect name</td><td>Searchable dropdown backed by the <b>Egyptian companies directory</b> (live OpenCorporates reconciliation with a curated fallback). If the company is not listed, choose <b>“Not included”</b> and type the name — the Head of Products validates it.</td></tr>
+    <tr><td>Industry / Sector</td><td>Dropdown from the managed industries list.</td></tr>
+    <tr><td>Products of interest</td><td>Multi-select from the managed product catalogue (tick all that apply).</td></tr>
+    <tr><td>Commercial Register no.</td><td>Auto-filled when picked from the directory; editable.</td></tr>
+    <tr><td>Contact person / mobile / email</td><td>The prospect's point of contact.</td></tr>
+    <tr><td>Company, responsible person, value, visit &amp; close dates, attendees, summary</td><td>Standard pipeline fields. Attendees can be added from anywhere in the group.</td></tr>
+  </table>
+  <p>On save: the leadership list is notified, the Administrator is alerted by email, the entry is set to <b>Pending HoP — Validation</b>, and you are taken to the <b>Product Catalogue</b> to consider cross-sell.</p>
+
+  <h3>Pipeline &amp; Pipeline Entry</h3>
+  <p>The list of all pipeline entries and the detail page for each. The detail page shows prospect &amp; contact details, products, lifecycle, attachments and the full <b>comments / validation history</b>, plus the action buttons available to you (status change, HoP review, manage entry, resubmit).</p>
+
+  <h3>Master Ledger (All Merchants) &amp; Client profile</h3>
+  <p>All converted merchants across the group, searchable by name/status/company — check here before approaching a prospect to avoid duplicate outreach. From another company's client you can send an <b>alignment request</b> to its RM.</p>
+
+  <h3>Good to Go list</h3>
+  <p>Stagnant merchants and inactive pipeline entries released for group-wide re-engagement, newest activity first.</p>
+
+  <h3>Companies &amp; Product Catalogue</h3>
+  <p>Reference for the group companies and the full product list (with referral contacts). The catalogue is also where an RM lands after saving an entry.</p>
+
+  <h3>Bundles</h3>
+  <p>Currently empty by design. After saving an entry, cross-sell is driven from the Product Catalogue.</p>
+
+  <h3>Admin &amp; Lists</h3>
+  <p>The control centre (Admin / Head of Products). Tabs: <b>Industries</b>, <b>Products</b>, <b>Egypt company source</b>, <b>Notification recipients</b>, <b>Codes &amp; access</b>, and (Admin only) <b>Admin email log</b>. Add/delete entries here and every dropdown across the platform updates immediately.</p>
+
+  <!-- ============================================================= -->
+  <h2 id="journeys">6. Step-by-step journeys by role</h2>
+
+  <h3><span class="tag t-emp">Employee / RM</span> — submit a new prospect</h3>
+  <ol class="j">
+    <li>Sign in → click <b>New Entry</b> (sidebar) or <b>+ New pipeline entry</b>.</li>
+    <li>In <b>Prospect name</b>, start typing and pick the company from the directory. If it isn't there, click <b>“Not included”</b> and type the legal name.</li>
+    <li>Select the <b>industry</b>, tick the <b>products of interest</b>, and enter <b>Commercial Register no.</b> and the <b>contact person, mobile, email</b>.</li>
+    <li>Set the company, value, visit &amp; close dates, attendees and a short summary.</li>
+    <li>Click <b>Save &amp; notify leadership</b>. You're taken to the Product Catalogue; the entry is now pending validation.</li>
+    <li>Watch your <b>Notifications</b>: if the Head of Products returns it, open the entry, address the comment, and click <b>Resubmit for validation</b>.</li>
+  </ol>
+
+  <h3><span class="tag t-hop">Head of Products</span> — validate &amp; govern</h3>
+  <ol class="j">
+    <li>Open a <b>Pending HoP — Validation</b> entry from the dashboard or Notifications.</li>
+    <li>Review the whole case (prospect, directory flag, products, contact, value).</li>
+    <li>Choose one: <b>Approve</b> (→ First Meeting); <b>Return — “please choose prospect name”</b> (when a “Not included” prospect is actually in the directory); or <b>Return to RM</b> with a required comment.</li>
+    <li>For extensions / done deals / edits / deletions / late entries, use the matching <b>Approve / Reject</b> buttons.</li>
+    <li>Use <b>Admin &amp; Lists</b> to keep the industries, products and Egypt source lists current.</li>
+  </ol>
+
+  <h3><span class="tag t-lead">CEO / MD</span> — oversight</h3>
+  <ol class="j">
+    <li>Review the group-wide dashboard (exposure, active pipeline, Good to Go, alerts).</li>
+    <li>Open any pipeline entry; if relevant, <b>flag interest</b> to join the client visit — the RM is notified to coordinate.</li>
+    <li>Use the Master Ledger to see all merchants across companies.</li>
+  </ol>
+
+  <h3><span class="tag t-adm">Administrator</span> — configure &amp; monitor</h3>
+  <ol class="j">
+    <li>Open <b>Admin &amp; Lists</b>.</li>
+    <li><b>Industries / Products / Egypt source</b> tabs: add or delete items; dropdowns update instantly.</li>
+    <li><b>Notification recipients</b>: review the distribution list; add a recipient (this also creates a login).</li>
+    <li><b>Admin email log</b>: see every submitted request that triggered an admin alert.</li>
+    <li><b>Codes &amp; access</b>: merchant code scheme and the login/credential reference.</li>
+  </ol>
+
+  <!-- ============================================================= -->
+  <h2 id="admin">7. Administration &amp; configuration</h2>
+  <h3>Admin email alerts</h3>
+  <p>Every submitted request (new entry, extension, done deal, edit, delete, resubmit, alignment) raises an alert to the Administrator: an <b>in-app notification</b> to <code>doaa.orfy</code> plus a logged email to <code>doaa.orfy@contact.eg</code>, visible under <b>Admin &amp; Lists → Admin email log</b>.</p>
+  <div class="callout">To deliver these to a real mailbox, set the server environment variables <code>SMTP_HOST</code>, <code>SMTP_PORT</code>, <code>SMTP_USER</code>, <code>SMTP_PASS</code> (and optionally <code>SMTP_FROM</code>). No code change is needed — the platform sends real email automatically once they're present and keeps logging in-app either way.</p></div>
+  <h3>Managed lists &amp; the Egypt source</h3>
+  <p>Industries, products and the Egypt company fallback list are edited in <b>Admin &amp; Lists</b> and shared across all users. The prospect dropdown first queries the live <b>OpenCorporates Egypt</b> reconciliation API; if it is unavailable it uses the curated fallback list, so prospect search always works.</p>
+  <h3>Accounts</h3>
+  <p>All employees in the directory have login accounts and can insert entries. The Administrator can add a recipient/login from the Recipients tab; new accounts get the default password <code>Contact@123</code> and should be changed on first use in a production deployment.</p>
+
+  <!-- ============================================================= -->
+  <h2 id="reference">8. Reference data &amp; credentials</h2>
+  <h4>Industries (managed)</h4>
+  <p>ICT, Software &amp; Digital Services · Tourism, Hospitality &amp; Travel · Renewable Energy &amp; Green Industry · Manufacturing &amp; Export-Led Industry · Healthcare, Medical Services &amp; MedTech · Construction, Real Estate &amp; Infrastructure · Agribusiness &amp; Food Processing · Food &amp; beverage · FMCG · Automotive.</p>
+  <h4>Products (managed)</h4>
+  <p>Reverse Factoring · Normal Factoring · Consumer Factoring · Mortgage Finance · Equity Finance · Portfolio acquisition · Leasing Finance (Machinery / Real estate / Fleet) · Sale and lease back · Contact Now · Contact Credit · Insurance · Contact Auto. <i>(Credit Card removed.)</i></p>
+  <h4>Notification recipients</h4>
+  <p>The full directory — MD, C-level and Branch managers (74 people) — is notified on every new prospect. Maintained in Admin&nbsp;&amp;&nbsp;Lists → Notification recipients.</p>
+  <h4>Demo credentials — password <code>Contact@123</code></h4>
+  <table>
+    <tr><th>Username</th><th>Name</th><th>Role</th></tr>
+    <tr><td><code>doaa.orfy</code></td><td>Doaa Orfy</td><td>Administrator</td></tr>
+    <tr><td><code>d.elsayed</code></td><td>Dina El Sayed</td><td>Head of Products</td></tr>
+    <tr><td><code>h.mansour</code></td><td>Hala Mansour</td><td>CEO</td></tr>
+    <tr><td><code>k.hatem</code></td><td>Karim Hatem</td><td>MD</td></tr>
+    <tr><td><code>y.fahmy</code></td><td>Youssef Fahmy</td><td>RM (Factoring)</td></tr>
+    <tr><td><code>john.saad</code></td><td>John Saad</td><td>Employee (C-Level)</td></tr>
+    <tr><td><code>adel.kamel</code></td><td>Adel Kamel</td><td>Employee (Branch)</td></tr>
+  </table>
+  <p style="margin-top:8px">Usernames for any other employee = the part of their work email before <code>@</code> (e.g. <code>John.Saad@contact.eg</code> → <code>john.saad</code>).</p>
+
+  <hr>
+  <p style="font-size:12px;color:#718096">Contact Group · Client &amp; Pipeline Platform — Flow Charts &amp; User Guide · June 2026. This document describes the platform as deployed for testing; figures and lists are managed live inside the Admin&nbsp;&amp;&nbsp;Lists area.</p>
+
+</div>
+</body>
+</html>

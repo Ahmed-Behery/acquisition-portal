@@ -1,0 +1,61 @@
+# Local development stack.
+#
+# Not a production manifest: it binds Postgres to localhost, uses a weak
+# password and keeps data in a named volume. Production gets a managed
+# database, secrets from a vault, and TLS.
+
+name: acquisition-portal
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USERNAME:-portal}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-portal_local_password}
+      POSTGRES_DB: ${DB_NAME:-acquisition_portal}
+      # Deterministic collation, so ORDER BY does not vary with the host locale.
+      POSTGRES_INITDB_ARGS: '--encoding=UTF8 --locale=C'
+    ports:
+      # Bound to the loopback interface only. `5432:5432` would publish the
+      # database on every network the host is attached to.
+      - '127.0.0.1:5432:5432'
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./docker/init-test-db.sh:/docker-entrypoint-initdb.d/init-test-db.sh:ro
+    healthcheck:
+      # `-d` matters: without it pg_isready reports ready before the
+      # application database exists, and the API starts too early.
+      test: ['CMD-SHELL', 'pg_isready -U ${DB_USERNAME:-portal} -d ${DB_NAME:-acquisition_portal}']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  api:
+    build:
+      context: .
+      target: runtime
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      NODE_ENV: development
+      PORT: 4000
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USERNAME: ${DB_USERNAME:-portal}
+      DB_PASSWORD: ${DB_PASSWORD:-portal_local_password}
+      DB_NAME: ${DB_NAME:-acquisition_portal}
+    env_file:
+      - .env
+    ports:
+      - '127.0.0.1:4000:4000'
+    # Migrations are NOT run here. Schema change is a deliberate, reviewable
+    # step (`npm run migration:run`), not something an application container
+    # does to itself on restart — with more than one replica they would race.
+    command: ['node', 'dist/main.js']
+
+volumes:
+  postgres-data:
